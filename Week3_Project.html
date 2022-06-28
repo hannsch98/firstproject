@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Piano Lessons</title>
+		<style>
+			body {
+				/*background-color: rgba(89, 40, 13, 0.7);*/
+				background: linear-gradient(
+						to bottom,
+						rgba(251, 228, 186, 0.15) 0%,
+						rgba(89, 40, 13, 0.15) 100%
+					),
+					radial-gradient(
+							at top center,
+							rgba(251, 228, 186, 0.4) 0%,
+							rgba(89, 40, 13, 0.4) 120%
+						)
+						#989898;
+
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			h1 {
+				text-align: center;
+				color: #59280d;
+			}
+
+			h2 {
+				text-align: center;
+			}
+
+			h3 {
+				color: #59280d;
+			}
+
+			img {
+				display: block;
+				margin: 30px auto;
+				max-width: 100%;
+				border-radius: 30px;
+			}
+
+			button {
+				display: block;
+				margin: 0 auto;
+			}
+
+			hr {
+				max-width: 50%;
+				border: 1px solid #59280d;
+			}
+
+			ul {
+				list-style-type: none;
+				line-height: 1.5;
+			}
+
+			p {
+				line-height: 1.5;
+			}
+
+			span {
+				font-family: "Courier New", Courier, monospace;
+				color: #59280d;
+			}
+
+			a {
+				color: #59280d;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+				transition: all 200ms ease-in-out;
+			}
+
+			button {
+				background-color: #59280d;
+				border: none;
+				border-radius: 30px;
+				color: #fbe4ba;
+				font-size: 16px;
+				padding: 15px 30px;
+				box-shadow: 0 0 10px rgb(89, 40, 13, 0.5);
+			}
+
+			button:hover {
+				background-color: #fbe4ba;
+				color: #59280d;
+				cursor: pointer;
+				transition: all 150ms ease-in-out;
+			}
+
+			.container {
+				background-color: #fbe4ba;
+				padding: 25px 50px;
+				max-width: 600px;
+				margin: 20px auto;
+				border-radius: 25px;
+				box-shadow: 0 0 50px #000000;
+			}
+
+			.footer {
+				font-family: "Courier New", Courier, monospace;
+				font-size: small;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Apply for piano lessons!</h1>
+			<h2>
+				Learn an instrument to train your <span>body</span> and
+				<span>mind</span>
+			</h2>
+			<hr />
+			<button class="apply-button">Apply now</button>
+			<hr />
+			<p>
+				<em>
+					Music gives...
+					<ul>
+						<li>... wings to the mind,</li>
+						<li>... flight to the imagination,</li>
+						<li>... easiness and happiness</li>
+						<li>... and <strong>life</strong> to everything.</li>
+					</ul>
+				</em>
+				<a
+					href="https://www.wienklavierunterricht.com/"
+					target="_blank"
+					alt="Link to piano lessons in vienna"
+				>
+					⭐ Read more about piano lessons in Vienna here ⭐
+				</a>
+			</p>
+
+			<h3>Meditation & Fun</h3>
+			<p>
+				Playing the piano can not only be fun, but it is also possible to reach
+				a meditative state and train your mindfulness.
+			</p>
+
+			<h3>Improvisation & Music Theory</h3>
+			<p>
+				Even with simple concepts you learn to play freely. And we learn to
+				understand the magic behind the curtain in the music.
+			</p>
+
+			<img
+				src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/028/280/original/lorenzo-spoleti-MlhJNEUQpBs-unsplash.jpg?1646062652"
+				alt="Image of a piano and a music sheet"
+			/>
+
+			<div class="footer">
+				Coded by
+				<a
+					href="https://www.linkedin.com/in/hanna-schimek-998b561a7/"
+					target="_blank"
+				>
+					Hanna Schimek
+				</a>
+				<br />
+				Vienna, 2022
+			</div>
+		</div>
+		<script>
+			function updateHeading(newHeading) {
+				let h1 = document.querySelector("h1");
+				h1.innerHTML = newHeading;
+			}
+
+			function ageCheck() {
+				let age = prompt("How old are you?");
+				return age >= 18;
+			}
+
+			function applyNow() {
+				let name = prompt("What's your name?");
+
+				if (ageCheck()) {
+					updateHeading(`Thx for applying, ${name}! 🔥`);
+					alert("Application successful, we'll be in touch shortly!");
+				} else {
+					updateHeading(`Sorry, ${name}, you can't apply... ❄️`);
+					alert("Application failed, please try again.");
+				}
+			}
+
+			let applyButton = document.querySelector(".apply-button");
+			applyButton.addEventListener("click", applyNow);
+		</script>
+	</body>
+</html>
